@@ -12,6 +12,3 @@ A python script for testing WiZ light local features
 - "is_dimmable": true
 - "is_tunable_white": true
 - "is_tunable_color": true
-
-### Questions?
-Would we receive name through local connection? 
