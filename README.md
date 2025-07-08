@@ -24,6 +24,32 @@ WiZ is a smart lighting brand under Signify. They allow UDP control within the s
 - **Phase 4:** Create a CLI tool version
 - **Phase 5:** Create a simple frontend for users to trigger the auto-testing
 
+## How to use basic_refactor.py?
+First, download the script file
+
+```Bash
+git clone https://github.com/maudes/wiz-light-local-test-script.git
+cd wiz-light-local-test-script
+```
+
+>***Don't forget to update the `wiz_ip` field to your own WiZ testing device.***<br>
+>**HOW TO?** Install the device to WiZ app and check the device info
+   
+Second, run the script
+
+```Bash
+python3 basic_refactor.py
+```
+
+Last, check your result. In the best scenario, it shall shows as below:
+
+    WiZ response:  {'method': 'getPilot', 'env': 'pro', 'result': {'mac': 'd8a011ca9f47', 'rssi': -77, 'state': True, 'sceneId': 0, 'r': 100, 'g': 0, 'b': 140, 'c': 0, 'w': 0, 'dimming': 74}}
+    WiZ response:  {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    WiZ response:  {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    WiZ response:  {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    WiZ response:  {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    Total 5 tests passed, and 0 tests failed.
+
 ## Features 
 1. Change status: ON/OFF
 2. Change color: R, G, B, CW, WW (0 - 225)
