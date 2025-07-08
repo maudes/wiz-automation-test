@@ -15,17 +15,9 @@ is_passed = 0
 is_failed = 0
 
 
-def check_status(sock, ip, port):
-    # Prepare getPilot msg
-    get_msg = {
-        "method": "getPilot",
-        "env": "prod"
-    }
-    # Send out the msg to WiZ lights
-    sock.sendto(json.dumps(get_msg).encode(), (ip, port))
-
-    # Wait to receive Response from the network
-    # for _ in range(3):
+# Shared send and receive actions
+def send_receive(sock, msg, ip, port):
+    sock.sendto(json.dumps(msg).encode(), (ip, port))
     try:
         data, _ = sock.recvfrom(1024)
         print('WiZ response: ', json.loads(data.decode()))
@@ -35,29 +27,30 @@ def check_status(sock, ip, port):
         return False
 
 
+def check_state(sock, ip, port):
+    # Prepare getPilot msg
+    msg = {
+        "method": "getPilot",
+        "env": "pro"
+    }
+    return send_receive(sock, msg, ip, port)
+
+
 def check_off(sock, ip, port):
     # Turn off
-    off_msg = {
+    msg = {
         "method": "setPilot",
         "env": "pro",
         "params": {
             "state": False
         }
     }
-    sock.sendto(json.dumps(off_msg).encode(), (ip, port))
-
-    try:
-        data, _ = sock.recvfrom(1024)
-        print('WiZ response: ', json.loads(data.decode()))
-        return True
-    except socket.timeout:
-        print('No response')
-        return False
+    return send_receive(sock, msg, ip, port)
 
 
 def check_white(sock, ip, port):
     # Turn on with white light
-    on_msg = {
+    msg = {
         "method": "setPilot",
         "env": "pro",
         "params": {
@@ -66,22 +59,12 @@ def check_white(sock, ip, port):
             "dimming": 30
         }
     }
-    sock.sendto(json.dumps(on_msg).encode(), (ip, port))
-
-    try:
-        data, _ = sock.recvfrom(1024)
-        print('WiZ response: ', json.loads(data.decode()))
-        return True
-    except socket.timeout:
-        print('No response')
-        return False
-
-# time.sleep(3)
+    return send_receive(sock, msg, ip, port)
 
 
 def check_lightmode(sock, ip, port):
     # Change light mode
-    scene_msg = {
+    msg = {
         "method": "setPilot",
         "env": "pro",
         "params": {
@@ -91,22 +74,12 @@ def check_lightmode(sock, ip, port):
             "speed": 100,
         }
     }
-    sock.sendto(json.dumps(scene_msg).encode(), (ip, port))
-
-    try:
-        data, _ = sock.recvfrom(1024)
-        print('WiZ response: ', json.loads(data.decode()))
-        return True
-    except socket.timeout:
-        print('No response')
-        return False
-
-# time.sleep(3)
+    return send_receive(sock, msg, ip, port)
 
 
 def check_rgb(sock, ip, port):
     # Change RGB
-    rgb_msg = {
+    msg = {
         "method": "setPilot",
         "env": "pro",
         "params": {
@@ -119,42 +92,15 @@ def check_rgb(sock, ip, port):
             "dimming": 20,
         }
     }
-    sock.sendto(json.dumps(rgb_msg).encode(), (ip, port))
-
-    try:
-        data, _ = sock.recvfrom(1024)
-        print('WiZ response: ', json.loads(data.decode()))
-        return True
-    except socket.timeout:
-        print('No response')
-        return False
+    return send_receive(sock, msg, ip, port)
 
 
 # Run the tests
-if check_status(sock, wiz_ip, wiz_port):
-    is_passed += 1
-else:
-    is_failed += 1
-
-if check_off(sock, wiz_ip, wiz_port):
-    is_passed += 1
-else:
-    is_failed += 1
-
-if check_white(sock, wiz_ip, wiz_port):
-    is_passed += 1
-else:
-    is_failed += 1
-
-if check_lightmode(sock, wiz_ip, wiz_port):
-    is_passed += 1
-else:
-    is_failed += 1
-
-if check_rgb(sock, wiz_ip, wiz_port):
-    is_passed += 1
-else:
-    is_failed += 1
+for check in [check_state, check_off, check_white, check_lightmode, check_rgb]:
+    if check(sock, wiz_ip, wiz_port):
+        is_passed += 1
+    else:
+        is_failed += 1
 
 print(f"Total {is_passed} tests passed, and {is_failed} tests failed.")
 
