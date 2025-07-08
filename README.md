@@ -1,4 +1,4 @@
-# Local API Test Script for WiZ Lights
+# Local Control Test Script for WiZ Lights
 WiZ is a smart lighting brand under Signify. They allow UDP control within the same network. In this project, I'd like to compose scripts to test WiZ light's basic features automatically using Python. 
 (Note: this is a side-project for learning purpose.)
 
@@ -50,7 +50,7 @@ Last, check your result. In the best scenario, it shall shows as below:
     WiZ response:  {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
     Total 5 tests passed, and 0 tests failed.
 
-## Features 
+## WiZ Lights Local Control Features 
 1. Change status: ON/OFF
 2. Change color: R, G, B, CW, WW (0 - 225)
 3. Change dimming: 0 - 100
