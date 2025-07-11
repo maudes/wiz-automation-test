@@ -20,7 +20,7 @@ WiZ is a smart lighting brand under Signify. They allow UDP control within the s
 ## Project plan
 - **Phase 1:** A straitforward test => **[basic.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/basic.py)**
 - **Phase 2:** Wrap-up the code into a more clean and maintanence-friendly format with results output => **[basic_refactor.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/basic_refactor.py)**
-- **Phase 3:** Expand the basic test script using Pytest
+- **Phase 3:** Expand the basic test script using Pytest => **[wrap_pytest](https://github.com/maudes/wiz-light-local-test-script/tree/main/wrap_pytest)**
 - **Phase 4:** Create a CLI tool version
 - **Phase 5:** Create a simple frontend for users to trigger the auto-testing
 
