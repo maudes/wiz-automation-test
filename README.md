@@ -71,7 +71,7 @@ And, you should see the test results shown as
 
 Plus, you can generate a HTML report (don't foreget to download pytest-html first!)
 ```Bash
-python3 -m pytest tests --html=report.html
+python3 -m pytest tests --html={filename}.html
 ```
 
 
