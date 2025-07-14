@@ -8,8 +8,17 @@ WIZ_IP = os.getenv('WIZ_IP')
 WIZ_PORT = int(os.getenv('WIZ_PORT'))
 '''
 
-wiz_ip = "192.168.0.20"
+#  wiz_ip = "192.168.0.20"
 wiz_port = 38899
+
+
+def pytest_addoption(parser):
+    parser.addoption("--ip", action="store")  # default='192.168.0.20'
+
+
+@pytest.fixture(scope='module')
+def wiz_ip(request):
+    return request.config.getoption("--ip")
 
 
 # Build up UDP socket
@@ -22,7 +31,7 @@ def udp_socket():
 
 
 @pytest.fixture(scope='module')
-def wiz_client(udp_socket):
+def wiz_client(udp_socket, wiz_ip):
     def _send_receive(msg):
         udp_socket.sendto(json.dumps(msg).encode(), (wiz_ip, wiz_port))
         try:
