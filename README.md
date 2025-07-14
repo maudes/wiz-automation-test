@@ -9,7 +9,7 @@ WiZ is a smart lighting brand under Signify. They allow UDP control within the s
 4. Change temperature: 2700 - 6500
 5. Change light modes: scene_id 1 - 28 (should have more)
 
-## Key features of the script
+## Key features of the script 
 ### Basic interface
 - Run Python script in CLI (no parameter supported)
 ### Basic features
@@ -32,12 +32,12 @@ git clone https://github.com/maudes/wiz-light-local-test-script.git
 cd wiz-light-local-test-script
 ```
    
-Second, run the script
+Second, run the script with your test device's ip address
 
 ```Bash
 python3 basic_refactor.py --ip xxx.xxx.xxx.xxx
 ```
->**HOW TO?** Install the device to WiZ app and check the device info
+>**HOW to find the device IP address?** Install the device to WiZ app and check the device info
 
 Last, check your result. In the best scenario, it shall shows as below:
 
