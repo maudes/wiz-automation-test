@@ -4,7 +4,7 @@ import json
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--ip", type=str, required=True)
+parser.add_argument("--ip", type=str, required=True)  # default 與 required 互斥
 args = parser.parse_args()  # 實例化，不管有幾個 argument 只需要一次
 
 wiz_ip = args.ip

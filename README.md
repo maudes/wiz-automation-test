@@ -57,7 +57,7 @@ cd wrap_pytest
 
 Then, run the pytest in tests file
 ```Bash
-python3 -m pytest tests
+python3 -m pytest --ip=xxx.xxx.xxx.xxx
 ```
 
 And, you should see the test results shown as
