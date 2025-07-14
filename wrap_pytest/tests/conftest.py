@@ -1,14 +1,7 @@
 import pytest
 import socket
 import json
-'''
-import os
 
-WIZ_IP = os.getenv('WIZ_IP')
-WIZ_PORT = int(os.getenv('WIZ_PORT'))
-'''
-
-#  wiz_ip = "192.168.0.20"
 wiz_port = 38899
 
 
