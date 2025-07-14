@@ -31,15 +31,13 @@ First, download the script file
 git clone https://github.com/maudes/wiz-light-local-test-script.git
 cd wiz-light-local-test-script
 ```
-
->***Don't forget to update the `wiz_ip` field to your own WiZ testing device.***<br>
->**HOW TO?** Install the device to WiZ app and check the device info
    
 Second, run the script
 
 ```Bash
-python3 basic_refactor.py
+python3 basic_refactor.py --ip xxx.xxx.xxx.xxx
 ```
+>**HOW TO?** Install the device to WiZ app and check the device info
 
 Last, check your result. In the best scenario, it shall shows as below:
 
