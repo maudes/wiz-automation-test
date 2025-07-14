@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
 import socket
 import json
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--ip", type=str, required=True)
+args = parser.parse_args()  # 實例化，不管有幾個 argument 只需要一次
+
+wiz_ip = args.ip
+'''
 # WiZ specific info for connection
 wiz_ip = '192.168.0.20'  # Change based on the WiZ device you're testing
+'''
 wiz_port = 38899          # Fixed port WiZ using
+
 
 # Build up UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
