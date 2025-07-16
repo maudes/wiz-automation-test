@@ -12,7 +12,7 @@ device_type = st.selectbox(
     ("Color light", "Tuneable white light", "Dimmable light"),
 )
 
-if st.button("Run the test", type="primary")
+if st.button("Run the test", type="primary"):
     str.write("Should trigger the test run, and print out the result below")
 
 
