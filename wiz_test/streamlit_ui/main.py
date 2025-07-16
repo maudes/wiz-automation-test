@@ -13,7 +13,7 @@ device_type = st.selectbox(
 )
 
 if st.button("Run the test", type="primary"):
-    str.write("Should trigger the test run, and print out the result below")
+    st.write("Should trigger the test run, and print out the result below")
 
 
 st.subheader("Test result", divider=True)
