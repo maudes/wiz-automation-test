@@ -2,7 +2,7 @@ import streamlit as st
 import color
 import dimmable
 import tuneable
-from .communication import close, udp_socket
+from communication import close, udp_socket
 import time
 
 st.title("Run local test with my WiZ light!")
