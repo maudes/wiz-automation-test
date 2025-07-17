@@ -1,6 +1,7 @@
 import pytest
 import socket
 import json
+import time
 
 wiz_port = 38899
 
@@ -30,6 +31,7 @@ def wiz_client(udp_socket, wiz_ip):
         try:
             data, _ = udp_socket.recvfrom(1024)
             response = json.loads(data.decode())
+            time.sleep(3)
             # print(f'WiZ response for {msg.get("method", "unknown")}: {response}')
             return response  # 給系統比對用
         except socket.timeout:

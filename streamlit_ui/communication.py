@@ -21,5 +21,9 @@ def send_and_receive(sock, msg, ip):
         data, _ = sock.recvfrom(1024)
         response = json.loads(data.decode())
         return response
-    except (socket.timeout, json.JSONDecodeError, Exception):
-        return False
+    except socket.timeout:
+        return {"error": "timeout"}
+    except json.JSONDecodeError:
+        return {"error": "invalid JSON"}
+    except Exception as e:
+        return {"error": str(e)}

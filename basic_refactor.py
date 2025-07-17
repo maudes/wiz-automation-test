@@ -2,6 +2,7 @@
 import socket
 import json
 import argparse
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--ip", type=str, required=True)  # default 與 required 互斥
@@ -30,6 +31,7 @@ def send_receive(sock, msg, ip, port):
     try:
         data, _ = sock.recvfrom(1024)
         print('WiZ response: ', json.loads(data.decode()))
+        time.sleep(3)
         return True
     except socket.timeout:
         print('No response')
