@@ -101,13 +101,14 @@ def run(device_type, ip):
     is_passed = 0
     is_failed = 0
     results = {}  # new dictionary for saving results
-    for tc_name, msg in test_cases.items():
-        try:
-            response = send_and_receive(udp_socket, msg, ip)
-            results[tc_name] = response
-            is_passed += 1
-            time.sleep(0.5)
-        except Exception as e:
-            results[tc_name] = f"Error: {e}"
-            is_failed += 1
+    with udp_socket() as sock:
+        for tc_name, msg in test_cases.items():
+            try:
+                response = send_and_receive(sock, msg, ip)
+                results[tc_name] = response
+                is_passed += 1
+                time.sleep(0.5)
+            except Exception as e:
+                results[tc_name] = f"Error: {e}"
+                is_failed += 1
     return results, is_passed, is_failed

@@ -12,18 +12,14 @@ def udp_socket():
     try:
         yield sock
     finally:
-        sock.close
+        sock.close()
 
 
-def send_and_receive(udp_socket, msg, ip):
-    udp_socket.sendto(json.dumps(msg).encode(), (ip, port))
+def send_and_receive(sock, msg, ip):
+    sock.sendto(json.dumps(msg).encode(), (ip, port))
     try:
-        data, _ = udp_socket.recvfrom(1024)
+        data, _ = sock.recvfrom(1024)
         response = json.loads(data.decode())
         return response
-    except socket.timeout:
-        return False
-    except json.JSONDecodeError:
-        return False
-    except Exception:
+    except (socket.timeout, json.JSONDecodeError, Exception):
         return False
