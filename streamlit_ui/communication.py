@@ -1,6 +1,7 @@
 import socket
 import json
 from contextlib import contextmanager
+import time
 
 port = 38899
 
@@ -20,6 +21,7 @@ def send_and_receive(sock, msg, ip):
     try:
         data, _ = sock.recvfrom(1024)
         response = json.loads(data.decode())
+        time.sleep(3)
         return response
     except socket.timeout:
         return {"error": "timeout"}
