@@ -1,10 +1,8 @@
-from communication import udp_socket, send_and_receive
-import time
 # common features: change RGB, 
 # lightmodes: 1 - 5, 7, 8, 19 - 28 (brightness, speed)
 
 # dictionary
-test_cases = {
+color_test_case = {
     "get_state": {
         "method": "getPilot",
         "env": "pro"
@@ -95,20 +93,87 @@ test_cases = {
 }
 
 
-def run(device_type, ip):
-    if device_type != "Color light":
-        return False
-    is_passed = 0
-    is_failed = 0
-    results = {}  # new dictionary for saving results
-    with udp_socket() as sock:
-        for tc_name, msg in test_cases.items():
-            try:
-                response = send_and_receive(sock, msg, ip)
-                results[tc_name] = response
-                is_passed += 1
-                time.sleep(0.5)
-            except Exception as e:
-                results[tc_name] = f"Error: {e}"
-                is_failed += 1
-    return results, is_passed, is_failed
+# common features: change temperate 2700 - 6500
+# # change temperature lightmodes: 6, 11-16, 18 (brightness, speed)
+
+tuneable_test_case = {
+    "get_state": {
+        "method": "getPilot",
+        "env": "pro"
+    },
+    "turn_off": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": False
+        }
+    },
+    "turn_on_brightness": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": True,
+            "dimming": 38
+        }
+    },
+    "change_temp_warm": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": True,
+            "temp": 4200,
+            "dimming": 55
+        }
+    },
+    "change_temp_cold": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": True,
+            "temp": 5500,
+            "dimming": 70
+        }
+    },
+    "scene_daylight": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": True,
+            "sceneId": 21,
+            "dimming": 38
+        }
+    }, 
+    "scene_relax": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": True,
+            "sceneId": 16,
+            "dimming": 38
+        }
+    }
+}
+
+
+# common features: on/off, change brightness
+dimmable_test_case = {
+    "get_state": {
+        "method": "getPilot",
+        "env": "pro"
+    },
+    "turn_off": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": False
+        }
+    },
+    "turn_on_brightness": {
+        "method": "setPilot",
+        "env": "pro",
+        "params": {
+            "state": True,
+            "dimming": 38
+        }
+    }
+}
