@@ -20,12 +20,12 @@ WiZ is a smart lighting brand under Signify. They allow UDP control within the s
 ## Overview
 ```
  wiz-light-local-test-script
-｜＿＿ modules/
-｜    ｜＿＿ __init__.py
-｜    ｜＿＿ communication.py
-｜    ｜＿＿ runner.py
-｜    ｜＿＿ type_data.py
-｜＿＿ pytest/
+｜＿＿ modules/                  # For the use of cli.py and app.py 
+｜    ｜＿＿ __init__.py      
+｜    ｜＿＿ communication.py    # Build the udp connection, send and receive the udp packet
+｜    ｜＿＿ runner.py           # Run the test cases
+｜    ｜＿＿ type_data.py        # Test cases based on different device types
+｜＿＿ pytest/ 
 ｜    ｜＿＿ tests/
 ｜    ｜   ｜＿＿ conftest.py
 ｜    ｜   ｜＿＿ test_basic.py
@@ -34,7 +34,7 @@ WiZ is a smart lighting brand under Signify. They allow UDP control within the s
 ｜    ｜＿＿ basic_refactor.py
 ｜    ｜＿＿ basic.py
 ｜＿＿ cli.py
-｜＿＿ app.py 
+｜＿＿ app.py                    # streamlit
 ｜＿＿ README.md
 ```
 
