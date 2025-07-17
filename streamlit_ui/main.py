@@ -2,7 +2,6 @@ import streamlit as st
 import color
 import dimmable
 import tuneable
-from communication import close, udp_socket
 import time
 
 st.title("Run local test with my WiZ light!")
@@ -33,5 +32,3 @@ if st.button("Run the test", type="primary"):
         st.write("Detailed results: ")
         for name, result in results.items():
             st.markdown(f"**{name}:** `{result}`")
-
-    close(udp_socket)

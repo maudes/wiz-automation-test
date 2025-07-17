@@ -1,13 +1,18 @@
 import socket
 import json
+from contextlib import contextmanager
 
 port = 38866
 
 
+@contextmanager
 def udp_socket():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.settimeout(3)
-    return sock
+    try:
+        yield sock
+    finally:
+        sock.close
 
 
 def send_and_receive(udp_socket, msg, ip):
@@ -22,7 +27,3 @@ def send_and_receive(udp_socket, msg, ip):
         return False
     except Exception:
         return False
-
-
-def close(udp_socket):
-    udp_socket.close()
