@@ -1,5 +1,7 @@
 import streamlit as st
-from . import color, dimmable, tuneable
+import color
+import dimmable
+import tuneable
 from .communication import close, udp_socket
 import time
 
