@@ -17,4 +17,5 @@ ip = args.ip
 
 results, passed, failed = run_tests(device_type, ip)
 print(f"Total {passed + failed} with {passed} tests passed and {failed} tests failed.")
-print(f"{results}")
+for name, result in results.items():
+    print(f"{name}: {result}")
