@@ -1,6 +1,6 @@
 import streamlit as st
-from stareamlit_ui import color, dimmable, tuneable
-from stareamlit_ui.communication import close, udp_socket
+from streamlit_ui import color, dimmable, tuneable
+from streamlit_ui.communication import close, udp_socket
 import time
 
 st.title("Run local test with my WiZ light!")
