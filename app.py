@@ -27,9 +27,9 @@ if st.button("Run the test", type="primary"):
         for name, result in results.items():
             st.markdown(f"**{name}:** `{result}`")
 
-st.download_button(
-    label="Download results as JSON",
-    data=json.dumps(results, indent=2),
-    file_name="wiz_test_results.json",
-    mime="application/json"
+    st.download_button(
+        label="Download results as JSON",
+        data=json.dumps(results, indent=2),
+        file_name="wiz_test_results.json",
+        mime="application/json"
 )
