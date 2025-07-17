@@ -101,7 +101,7 @@ def run(device_type, ip):
     is_passed = 0
     is_failed = 0
     results = {}  # new dictionary for saving results
-    for tc_name, msg in test_cases:
+    for tc_name, msg in test_cases.items:
         try:
             response = send_and_receive(udp_socket, msg, ip)
             results[tc_name] = response
