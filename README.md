@@ -95,16 +95,16 @@ python3 cli.py --ip xxx.xxx.xxx.xxx --type="Color light/ Tuneable white light/ D
 You shall receive results like below:
 
     Total 10 with 10 tests passed and 0 tests failed.
-    {'get_state': {'method': 'getPilot', 'env': 'pro', 'result': {'mac': 'd8a011xxxxxx', 'rssi': -49, 'state': True, 'sceneId': 0, 'r': 100, 'g': 0, 'b': 140, 'c': 0, 'w': 0, 'dimming': 20}}, 
-    'turn_off': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'turn_on_brightness': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'change_temp_warm': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'change_temp_cold': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'scene_relax': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'scene_ocean': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'scene_romance': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'scene_mojito': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}, 
-    'change_rgb': {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}}
+    get_state: {'method': 'getPilot', 'env': 'pro', 'result': {'mac': 'd8a011xxxxxx', 'rssi': -48, 'state': True, 'sceneId': 0, 'r': 100, 'g': 0, 'b': 140, 'c': 0, 'w': 0, 'dimming': 20}}
+    turn_off: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    turn_on_brightness: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    change_temp_warm: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    change_temp_cold: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    scene_relax: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    scene_ocean: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    scene_romance: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    scene_mojito: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
+    change_rgb: {'method': 'setPilot', 'env': 'pro', 'result': {'success': True}}
 
 ## How to use app.py?
 
