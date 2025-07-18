@@ -1,0 +1,21 @@
+# Python 虛擬環境與環境變數
+.venv/
+venv/
+.env
+.env.*
+
+# Python 快取檔案
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 測試工具與覆蓋率報告
+.pytest_cache/
+.coverage
+.coverage.*
+.cache/
+htmlcov/
+
+# Dev Container 與 VS Code 設定
+.devcontainer/
+.vscode/
