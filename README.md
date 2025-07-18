@@ -10,9 +10,9 @@ WiZ is a smart lighting brand under Signify. They allow UDP control within the s
 5. Change light modes: scene_id 1 - 28 (should have more)
 
 ## Project plan
-- **Phase 1:** A straitforward test => **[basic.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/simple_scripts/basic.py)**
-- **Phase 2:** Wrap-up the code into a more clean and maintanence-friendly format with results output => **[basic_refactor.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/simple_scripts/basic_refactor.py)**
-- **Phase 3:** Expand the basic test script using Pytest => **[pytest](https://github.com/maudes/wiz-light-local-test-script/tree/main/pytest)**
+- **Phase 1:** A straitforward test => **[basic.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/simple_scripts/basic.py{:target="_blank"})**
+- **Phase 2:** Wrap-up the code into a more clean and maintanence-friendly format with results output => **[basic_refactor.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/simple_scripts/basic_refactor.py{:target="_blank"})**
+- **Phase 3:** Expand the basic test script using Pytest => **[pytest](https://github.com/maudes/wiz-light-local-test-script/tree/main/pytest{:target="_blank"})**
 - **Phase 4:** Create a CLI tool version   *(**7/14/2025:** updated in both `basic_refactor.py` and `pytest`)*
 - **Phase 5:** Create a simple frontend for users to trigger the auto-testing *(**7/16/2025:** References: `modules`, `app.py`, `cli.py`)*
 
@@ -115,4 +115,4 @@ Install streamlit in your local machine, and run in local env (for receiving the
 pip3 install streamlit
 streamlit run app.py
 ```
-In terms of the UI, you can have a look [here.](https://wiz-local-test.streamlit.app/)
+In terms of the UI, you can have a look [here.](https://wiz-local-test.streamlit.app/{:target="_blank"})
