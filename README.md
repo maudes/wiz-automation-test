@@ -33,7 +33,7 @@ WiZ is a smart lighting brand under Signify. They allow UDP control within the s
 ｜＿＿ simple_scripts
 ｜    ｜＿＿ basic_refactor.py
 ｜    ｜＿＿ basic.py
-｜＿＿ cli.py
+｜＿＿ cli.py                    # CLI tool
 ｜＿＿ app.py                    # streamlit
 ｜＿＿ README.md
 ```
