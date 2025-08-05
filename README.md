@@ -1,21 +1,31 @@
-# Local Control Test Script for WiZ Lights
-WiZ is a smart lighting brand under Signify. They allow UDP control within the same network. In this project, I'd like to compose scripts to test WiZ light's basic features automatically using Python. 
-(Note: this is a side-project for learning purpose.)
+# WiZ Lights Local Control Test Script
 
-### WiZ Lights Local Control Features 
-1. Change status: ON/OFF
-2. Change color: R, G, B, CW, WW (0 - 225)
-3. Change dimming: 0 - 100
-4. Change temperature: 2700 - 6500
-5. Change light modes: scene_id 1 - 28 (should have more)
+WiZ is a smart lighting brand under Signify that supports local UDP control within the same network. This project is a Python-based automation suite designed to test core functionalities of WiZ lights.  
+> ⚠️ This is a side project for learning and experimentation.
 
-## Project plan
-- **Phase 1:** A straitforward test => **[basic.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/simple_scripts/basic.py)**
-- **Phase 2:** Wrap-up the code into a more clean and maintanence-friendly format with results output => **[basic_refactor.py](https://github.com/maudes/wiz-light-local-test-script/blob/main/simple_scripts/basic_refactor.py)**
-- **Phase 3:** Expand the basic test script using Pytest => **[pytest](https://github.com/maudes/wiz-light-local-test-script/tree/main/pytest)**
-- **Phase 4:** Create a CLI tool version   *(**7/14/2025:** updated in both `basic_refactor.py` and `pytest`)*
-- **Phase 5:** Create a simple frontend for users to trigger the auto-testing *(**7/16/2025:** References: `modules`, `app.py`, `cli.py`)*
+---
 
+## Supported Features
+
+- Power control: ON / OFF
+- Color adjustment: R / G / B / CW / WW (range: 0–225)
+- Brightness control: 0–100
+- Color temperature: 2700–6500K
+- Light scenes: `scene_id` 1–28 (possibly more supported)
+
+---
+
+## Project Roadmap
+
+| Phase | Description | Link |
+|-------|-------------|------|
+| Phase 1 | Basic test script | [basic.py](simple_scripts/basic.py) |
+| Phase 2 | Refactored script with cleaner structure and result output | [basic_refactor.py](simple_scripts/basic_refactor.py) |
+| Phase 3 | Pytest-based test suite | [pytest/](pytest) |
+| Phase 4 | CLI tool implementation<br>🗓️ Updated: July 14, 2025 | [cli.py](cli.py) |
+| Phase 5 | Simple frontend for triggering tests<br>🗓️ Updated: July 16, 2025 | [app.py](app.py) |
+
+---
 
 ## Overview
 ```
