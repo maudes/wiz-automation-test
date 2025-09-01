@@ -1,4 +1,4 @@
-# WiZ Lights Local Control Test Script
+# WiZ Lights Local Control Automation Test
 
 WiZ is a smart lighting brand under Signify that supports local UDP control within the same network. This project is a Python-based automation suite designed to test core functionalities of WiZ lights.  
 > ⚠️ This is a side project for learning and experimentation.
